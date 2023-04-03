@@ -5,7 +5,7 @@ class DataSource {
                 return response.json();
             })
             .then(responseJson => {
-                if (responseJson.results) {
+                if (responseJson.results != null) {
                     return Promise.resolve(responseJson.results)
                 } else {
                     return Promise.reject(`An error occurred in displaying`)
@@ -19,9 +19,12 @@ class DataSource {
                 return response.json();
             })
             .then(responseJson => {
-                if (responseJson.results) {
+                if (responseJson.total_results!==0) {
                     return Promise.resolve(responseJson.results)
-                } else {return Promise.reject(`film with keyword ${keyword} is not found`)}
+                } else {
+                    console.log("adasdas");
+                    return Promise.reject(`Film with keyword ${keyword} is not found`)
+                }
             });
     }
 }
