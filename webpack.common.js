@@ -1,8 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
 const BuildHashPlugin = require('build-hash-webpack-plugin');
-const CssCleanupPlugin = require('css-cleanup-webpack-plugin');
-const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
 const path = require("path");
  
 module.exports = {
@@ -47,7 +45,5 @@ module.exports = {
           }
         }),
        new BuildHashPlugin(),
-       new CssCleanupPlugin(),
-       new DuplicatePackageCheckerPlugin()
    ]
 }
